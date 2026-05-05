@@ -30,7 +30,6 @@ offset_bottom = 600.0
 [node name="Center_Game" type="Node2D" parent="." unique_id=1467066836]
 
 [node name="ColorRect3" type="ColorRect" parent="Center_Game" unique_id=197441833]
-visible = false
 material = SubResource("ShaderMaterial_bo1nx")
 offset_left = 200.0
 offset_right = 600.0
@@ -38,12 +37,14 @@ offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Center_Game" unique_id=2077750802]
-visible = false
 material = SubResource("ShaderMaterial_jjgbg")
 offset_left = 200.0
 offset_right = 600.0
 offset_bottom = 600.0
 color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="Center_Game" unique_id=506069841 instance=ExtResource("1_bo1nx")]
+position = Vector2(395, 478)
 
 [node name="Right_UI" type="Node2D" parent="." unique_id=1024599755]
 
@@ -51,6 +52,3 @@ color = Color(0, 0, 0, 1)
 offset_left = 600.0
 offset_right = 800.0
 offset_bottom = 600.0
-
-[node name="Player" parent="." unique_id=506069841 instance=ExtResource("1_bo1nx")]
-position = Vector2(200, 0)
