@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://2j1v502d60ij"]
+
+[ext_resource type="PackedScene" uid="uid://b7jaexkuq5ch" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="Shader" uid="uid://c64hhx32ej1wn" path="res://Shaders/star_background.gdshader" id="1_jjgbg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bo1nx"]
+shader = ExtResource("1_jjgbg")
+shader_parameter/speed = 0.250000011875
+shader_parameter/star_density = 0.010000000475
+shader_parameter/star_size = 0.0050000002375
+shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjgbg"]
+shader = ExtResource("1_jjgbg")
+shader_parameter/speed = 0.2000000095
+shader_parameter/star_density = 0.050000002375
+shader_parameter/star_size = 0.0010000000475
+shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+
+[node name="Main" type="Node" unique_id=1399425962]
+
+[node name="Left_UI" type="Node2D" parent="." unique_id=1101593485]
+
+[node name="ColorRect" type="ColorRect" parent="Left_UI" unique_id=1311356867]
+offset_right = 200.0
+offset_bottom = 600.0
+
+[node name="Center_Game" type="Node2D" parent="." unique_id=1467066836]
+
+[node name="ColorRect3" type="ColorRect" parent="Center_Game" unique_id=197441833]
+visible = false
+material = SubResource("ShaderMaterial_bo1nx")
+offset_left = 200.0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Center_Game" unique_id=2077750802]
+visible = false
+material = SubResource("ShaderMaterial_jjgbg")
+offset_left = 200.0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Right_UI" type="Node2D" parent="." unique_id=1024599755]
+
+[node name="ColorRect2" type="ColorRect" parent="Right_UI" unique_id=2145376307]
+offset_left = 600.0
+offset_right = 800.0
+offset_bottom = 600.0
+
+[node name="Player" parent="." unique_id=506069841 instance=ExtResource("1_bo1nx")]
+position = Vector2(200, 0)
