@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byyx5gearv1cn" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dosy8muuoxdbm" path="res://Assets/Spaceship/Player Ship V1.png" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://cpdj48gwxwpuh" path="res://Scenes/missle.tscn" id="2_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 6.0
@@ -9,6 +10,7 @@ height = 26.0
 
 [node name="Player" type="CharacterBody2D" unique_id=506069841 groups=["player"]]
 script = ExtResource("1_cvnsp")
+missle_scene = ExtResource("2_6t5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068078453]
 texture_filter = 1

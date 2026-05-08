@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cpdj48gwxwpuh"]
+
+[ext_resource type="Texture2D" uid="uid://dp4b0gsaq4fyc" path="res://Assets/Spaceship/Player Misslev2.png" id="1_4vug3"]
+[ext_resource type="Script" uid="uid://bmp2a5rl0c58p" path="res://Scripts/missle.gd" id="1_bq2cw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vug3"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq2cw"]
+atlas = ExtResource("1_4vug3")
+region = Rect2(0, 0, 5, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qkh8"]
+atlas = ExtResource("1_4vug3")
+region = Rect2(5, 0, 5, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mx55l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq2cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qkh8")
+}],
+"loop": true,
+"name": &"fired",
+"speed": 5.0
+}]
+
+[node name="Missle" type="Node2D" unique_id=1316036048 groups=["missle"]]
+script = ExtResource("1_bq2cw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=714973007 groups=["missle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1894704529]
+shape = SubResource("CapsuleShape2D_4vug3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=751020996]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mx55l")
+animation = &"fired"
+frame_progress = 0.8382101

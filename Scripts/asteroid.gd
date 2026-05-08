@@ -1,3 +1,4 @@
+class_name asteroid
 extends CharacterBody2D
 
 
@@ -8,7 +9,8 @@ func _physics_process(delta: float) -> void:
 	velocity.y = SPEED
 	move_and_slide()
 
-
+func initialize():
+	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -16,3 +18,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var the_player: player = body
 		the_player.hit_asteroid(damage_inflicted)
 		print("player blow up animation")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("area is detected")
+	if area.is_in_group("missle"):
+		print("MISSLE HIT THE ASTEROID")
