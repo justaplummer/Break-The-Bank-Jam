@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7jaexkuq5ch" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Shader" uid="uid://c64hhx32ej1wn" path="res://Shaders/star_background.gdshader" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://2wqpmuxtb4u2" path="res://Scenes/asteroid.tscn" id="3_8gbba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bo1nx"]
 shader = ExtResource("1_jjgbg")
@@ -22,6 +23,7 @@ shader_parameter/bg_color = Color(0, 0, 0, 0)
 [node name="Main" type="Node" unique_id=1399425962]
 
 [node name="Left_UI" type="Node2D" parent="." unique_id=1101593485]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Left_UI" unique_id=1311356867]
 offset_right = 200.0
@@ -46,7 +48,11 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="Center_Game" unique_id=506069841 instance=ExtResource("1_bo1nx")]
 position = Vector2(395, 478)
 
+[node name="Asteroid" parent="Center_Game" unique_id=1300289852 instance=ExtResource("3_8gbba")]
+position = Vector2(377, 21)
+
 [node name="Right_UI" type="Node2D" parent="." unique_id=1024599755]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="Right_UI" unique_id=2145376307]
 offset_left = 600.0
