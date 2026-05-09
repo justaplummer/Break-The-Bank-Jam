@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ck0fliqu3aify" path="res://Assets/Spaceship/Asteroid Sprite Sheet.png" id="1_0tomg"]
 [ext_resource type="Script" uid="uid://dxgi8vt1ftett" path="res://Scripts/asteroid.gd" id="1_a2bka"]
+[ext_resource type="Texture2D" uid="uid://gepolhg8guh2" path="res://Assets/Spaceship/Asteroid 01 Breakapart v0.png" id="3_rvlwq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvlwq"]
 atlas = ExtResource("1_0tomg")
@@ -13,12 +14,17 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rvlwq"]
 radius = 12.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi0dy"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(0, 0, 32, 32)
+
 [node name="Asteroid" type="CharacterBody2D" unique_id=1300289852]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_a2bka")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=559085974]
+visible = false
 texture = SubResource("AtlasTexture_rvlwq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2127787597]
@@ -29,6 +35,9 @@ shape = SubResource("CircleShape2D_a2bka")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=591865356]
 shape = SubResource("CircleShape2D_rvlwq")
 debug_color = Color(0.92999375, 0.18623379, 0.479845, 0.41960785)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=869303184]
+texture = SubResource("AtlasTexture_bi0dy")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
