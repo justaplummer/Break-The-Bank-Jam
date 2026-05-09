@@ -29,16 +29,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Missle" type="Node2D" unique_id=1316036048 groups=["missle"]]
+[node name="Area2D" type="Area2D" unique_id=714973007 groups=["missle"]]
 script = ExtResource("1_bq2cw")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=714973007 groups=["missle"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1894704529]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1894704529]
 shape = SubResource("CapsuleShape2D_4vug3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=751020996]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=751020996]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mx55l")
 animation = &"fired"
-frame_progress = 0.8382101
+frame_progress = 0.15475865
