@@ -18,6 +18,69 @@ radius = 12.0
 atlas = ExtResource("3_rvlwq")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfhhd"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ils"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xliy4"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuwye"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8e0k"]
+atlas = ExtResource("3_rvlwq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u63df"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfhhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2ils")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xliy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuwye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8e0k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_3",
+"speed": 5.0
+}]
+
 [node name="Asteroid" type="CharacterBody2D" unique_id=1300289852]
 collision_layer = 2
 collision_mask = 2
@@ -37,7 +100,11 @@ shape = SubResource("CircleShape2D_rvlwq")
 debug_color = Color(0.92999375, 0.18623379, 0.479845, 0.41960785)
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=869303184]
+visible = false
 texture = SubResource("AtlasTexture_bi0dy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1105654458]
+sprite_frames = SubResource("SpriteFrames_u63df")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

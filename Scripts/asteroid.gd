@@ -1,7 +1,8 @@
 class_name asteroid
 extends CharacterBody2D
 
-
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var hit_count = 0
 const SPEED = 150
 @export var damage_inflicted: int = 1
 @export var max_health: int = 5
@@ -9,6 +10,7 @@ var cur_health
 
 func _ready() -> void:
 	cur_health = max_health
+	animated_sprite_2d.frame = hit_count
 
 func _physics_process(delta: float) -> void:
 	velocity.y = SPEED
@@ -34,6 +36,9 @@ func take_damage(damage:int):
 	cur_health -= damage
 	if cur_health <= 0:
 		death_animation()
+	else:
+		hit_count += 1
+		animated_sprite_2d.frame = hit_count
 		
 func death_animation():
 	#play a death animation and then queue_free()
