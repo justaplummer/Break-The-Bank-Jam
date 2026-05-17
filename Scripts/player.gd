@@ -3,11 +3,15 @@ extends CharacterBody2D
 
 @export var missle_scene :PackedScene
 @export var speed = 200
+@onready var ui_cargo: UI_Cargo = $"../../UI_cargo"
+
+
+
 var x_min = 225
 var x_max = 575
 var y_min = 25
 var y_max = 575
-var max_health = 10
+var max_health = 100
 var current_health = max_health 
 
 func get_input():
@@ -27,9 +31,10 @@ func _physics_process(delta):
 	position.y = clamp(position.y, y_min, y_max)
 	
 func hit_asteroid(health_subtract : int):
-	current_health -= health_subtract
-	if current_health < 0:
-		print("SHIP IS STRANDED!")
+	current_health = clamp(current_health - health_subtract,0,100)
+	ui_cargo.set_health_bar(current_health)
+	if current_health <= 0:
+		print("SHIP IS STRANDED! health at = ", current_health)
 
 func fire_missle():
 	var missle_to_spawn: missle = missle_scene.instantiate()

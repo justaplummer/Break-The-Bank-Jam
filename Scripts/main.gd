@@ -2,10 +2,15 @@ class_name main
 extends Node
 
 @export var asteroid_scene: PackedScene
+@onready var ui_cargo: UI_Cargo = $UI_cargo
+
 var min_x = 225
 var max_x = 575
 var min_y = -25
 var max_y = -100
+
+func _ready() -> void:
+	ui_cargo.reset_health_bar()
 
 func _on_asteroid_spawner_timeout() -> void:
 	# Create a new instance of the Mob scene.

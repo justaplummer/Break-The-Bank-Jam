@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://b8ydwvx4cmtx0"]
 
-[node name="Control" type="Control" unique_id=1496423086]
+[ext_resource type="Script" uid="uid://d3cg0x0ijct2x" path="res://Scripts/ui_cargo.gd" id="1_mkfop"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luekl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkfop"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="UI_cargo" type="Control" unique_id=1496423086]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -9,6 +17,7 @@ offset_right = -600.0
 offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mkfop")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1137870602]
 layout_mode = 1
@@ -27,17 +36,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Cargo Health"
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1526963145]
+[node name="pb_health" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1526963145]
+custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
-value = 100.0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=81564211]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1611123265]
-layout_mode = 2
-text = "Cargo Health"
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer2" unique_id=2032733722]
-layout_mode = 2
-value = 100.0
+theme_override_styles/background = SubResource("StyleBoxFlat_luekl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mkfop")
+value = 75.0
+show_percentage = false

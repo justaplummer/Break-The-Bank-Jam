@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var hit_count = 0
 const SPEED = 150
-@export var damage_inflicted: int = 1
+@export var damage_inflicted: int = 10
 @export var max_health: int = 5
 var cur_health
 
