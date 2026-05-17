@@ -4,10 +4,11 @@
 [ext_resource type="Shader" uid="uid://c64hhx32ej1wn" path="res://Shaders/star_background.gdshader" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b57e2djwuxw0n" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://2wqpmuxtb4u2" path="res://Scenes/asteroid.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://b8ydwvx4cmtx0" path="res://Scenes/UI/cargo.tscn" id="5_kry3j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bo1nx"]
 shader = ExtResource("1_jjgbg")
-shader_parameter/speed = 0.250000011875
+shader_parameter/speed = 0.2000000095
 shader_parameter/star_density = 0.010000000475
 shader_parameter/star_size = 0.0050000002375
 shader_parameter/star_color = Color(1, 1, 1, 1)
@@ -15,7 +16,7 @@ shader_parameter/bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjgbg"]
 shader = ExtResource("1_jjgbg")
-shader_parameter/speed = 0.2000000095
+shader_parameter/speed = 0.150000007125
 shader_parameter/star_density = 0.050000002375
 shader_parameter/star_size = 0.0010000000475
 shader_parameter/star_color = Color(1, 1, 1, 1)
@@ -48,9 +49,9 @@ position = Vector2(395, 478)
 position = Vector2(377, 21)
 
 [node name="Left_UI" type="Node2D" parent="." unique_id=1101593485]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Left_UI" unique_id=1311356867]
+visible = false
 offset_right = 200.0
 offset_bottom = 600.0
 
@@ -66,5 +67,7 @@ offset_bottom = 600.0
 
 [node name="Asteroid_Spawner" type="Timer" parent="timers" unique_id=700409232]
 autostart = true
+
+[node name="Control" parent="." unique_id=1496423086 instance=ExtResource("5_kry3j")]
 
 [connection signal="timeout" from="timers/Asteroid_Spawner" to="." method="_on_asteroid_spawner_timeout"]
