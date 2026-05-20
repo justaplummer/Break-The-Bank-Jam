@@ -1,4 +1,4 @@
-class_name player
+class_name Player
 extends CharacterBody2D
 
 @export var missle_scene :PackedScene
@@ -13,6 +13,7 @@ var y_min = 25
 var y_max = 575
 var max_health = 100
 var current_health = max_health 
+var mission_active = true
 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -23,6 +24,8 @@ func get_fired_input():
 		fire_missle()
 
 func _physics_process(delta):
+	if(not mission_active):
+		return
 	get_input()
 	get_fired_input()
 	move_and_slide()
@@ -41,3 +44,6 @@ func fire_missle():
 	missle_to_spawn.position = position
 	# Spawn the mob by adding it to the Main scene.
 	get_parent().add_child(missle_to_spawn)
+
+func set_mission_active(isActive : bool):
+	mission_active = isActive

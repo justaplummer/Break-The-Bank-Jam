@@ -21,7 +21,7 @@ func initialize():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		var the_player: player = body
+		var the_player: Player = body
 		the_player.hit_asteroid(damage_inflicted)
 		take_damage(max_health) #the player ship hitting an asteroid will automatically kill it
 

@@ -68,6 +68,10 @@ offset_bottom = 600.0
 [node name="Asteroid_Spawner" type="Timer" parent="timers" unique_id=700409232]
 autostart = true
 
+[node name="Mission_Length" type="Timer" parent="timers" unique_id=545327998]
+one_shot = true
+
 [node name="UI_cargo" parent="." unique_id=1496423086 instance=ExtResource("5_kry3j")]
 
 [connection signal="timeout" from="timers/Asteroid_Spawner" to="." method="_on_asteroid_spawner_timeout"]
+[connection signal="timeout" from="timers/Mission_Length" to="." method="_on_mission_length_timeout"]

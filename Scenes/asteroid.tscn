@@ -81,7 +81,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Asteroid" type="CharacterBody2D" unique_id=1300289852]
+[node name="Asteroid" type="CharacterBody2D" unique_id=1300289852 groups=["asteroid"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_a2bka")

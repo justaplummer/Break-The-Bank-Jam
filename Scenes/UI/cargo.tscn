@@ -2,11 +2,23 @@
 
 [ext_resource type="Script" uid="uid://d3cg0x0ijct2x" path="res://Scripts/ui_cargo.gd" id="1_mkfop"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yekg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a63ct"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c8d7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5raa"]
+bg_color = Color(0, 0.6, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luekl"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkfop"]
-bg_color = Color(1, 0, 0, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [node name="UI_cargo" type="Control" unique_id=1496423086]
 layout_mode = 3
@@ -34,9 +46,39 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=834262041]
 layout_mode = 2
-text = "Cargo Health"
+text = "Cargo Health "
 
 [node name="pb_health" type="ProgressBar" parent="VBoxContainer/HBoxContainer" unique_id=1526963145]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_5yekg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a63ct")
+value = 75.0
+show_percentage = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1612734184]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=248660714]
+layout_mode = 2
+text = "Progress         "
+
+[node name="pb_progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer3" unique_id=334160800]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8c8d7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f5raa")
+value = 75.0
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=986466665]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1976781421]
+layout_mode = 2
+text = "Cargo Weight"
+
+[node name="pb_weight" type="ProgressBar" parent="VBoxContainer/HBoxContainer2" unique_id=147145103]
 custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_luekl")

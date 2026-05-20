@@ -24,6 +24,7 @@ window/size/viewport_height=600
 
 player=""
 missle=""
+asteroid=""
 
 [physics]
 
