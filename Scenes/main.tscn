@@ -73,5 +73,17 @@ one_shot = true
 
 [node name="UI_cargo" parent="." unique_id=1496423086 instance=ExtResource("5_kry3j")]
 
+[node name="Button_reset_mission" type="Button" parent="." unique_id=1535950645]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_bottom = 31.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+focus_mode = 0
+text = "Start Mission"
+
 [connection signal="timeout" from="timers/Asteroid_Spawner" to="." method="_on_asteroid_spawner_timeout"]
 [connection signal="timeout" from="timers/Mission_Length" to="." method="_on_mission_length_timeout"]
+[connection signal="pressed" from="Button_reset_mission" to="." method="_on_button_pressed"]

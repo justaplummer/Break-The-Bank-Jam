@@ -12,7 +12,7 @@ func _physics_process(delta):
 		delete_self()
 
 func is_out_of_view():
-	return position.y < -25
+	return position.y < -1
 	
 func delete_self():
 	queue_free()

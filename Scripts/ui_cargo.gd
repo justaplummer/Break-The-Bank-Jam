@@ -20,8 +20,8 @@ func reset_health_bar():
 func set_health_bar(value : float):
 	pb_health.value = value	
 	
-func reset_progress_bar(value):
-	pb_progress.value = value
+func reset_progress_bar():
+	pb_progress.value = 0
 
 func set_progress_bar_max(max_value):
 	pb_progress.max_value = max_value

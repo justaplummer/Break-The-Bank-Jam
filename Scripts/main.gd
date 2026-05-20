@@ -6,6 +6,7 @@ extends Node
 @onready var mission_length: Timer = $timers/Mission_Length
 @onready var asteroid_spawner: Timer = $timers/Asteroid_Spawner
 @onready var player: Player = $Center_Game/Player
+@onready var button_reset_mission: Button = $Button_reset_mission
 
 var min_x = 225
 var max_x = 575
@@ -17,7 +18,7 @@ var shipping_path_length : int = 5 #this is how long the player will play the mi
 func _ready() -> void:
 	ui_cargo.reset_health_bar()
 	ui_cargo.set_progress_bar_max(shipping_path_length)
-	ui_cargo.reset_progress_bar(1)
+	ui_cargo.reset_progress_bar()
 	mission_length.start(shipping_path_length)
 
 func _process(delta: float) -> void:
@@ -43,8 +44,21 @@ func _on_mission_length_timeout() -> void:
 	asteroid_spawner.stop()
 	player.set_mission_active(false)
 	delete_all_asteroids()
+	button_reset_mission.disabled = false
 	
 
 func delete_all_asteroids():
 	for node in get_tree().get_nodes_in_group("asteroid"): 
 		node.queue_free()
+		
+func _unhandled_input(event: InputEvent) -> void:
+	pass
+
+func _on_button_pressed() -> void:
+	player.set_mission_active(true)
+	asteroid_spawner.start(1)
+	ui_cargo.reset_progress_bar()
+	mission_length.start(shipping_path_length)
+	button_reset_mission.disabled = true
+	
+	
